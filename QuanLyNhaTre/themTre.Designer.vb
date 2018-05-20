@@ -33,11 +33,9 @@ Partial Class themTre
         Me.hTenTr = New System.Windows.Forms.TextBox()
         Me.ngaySinhTr = New System.Windows.Forms.DateTimePicker()
         Me.tuoi = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.tenPH = New System.Windows.Forms.TextBox()
         Me.dth = New System.Windows.Forms.TextBox()
         Me.diaChiTr = New System.Windows.Forms.TextBox()
-        Me.maLop = New System.Windows.Forms.ComboBox()
         Me.maTr = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.nhap = New System.Windows.Forms.Button()
@@ -47,7 +45,7 @@ Partial Class themTre
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 62)
+        Me.Label1.Location = New System.Drawing.Point(37, 103)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(62, 13)
         Me.Label1.TabIndex = 0
@@ -56,7 +54,7 @@ Partial Class themTre
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 104)
+        Me.Label2.Location = New System.Drawing.Point(377, 196)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 1
@@ -92,7 +90,7 @@ Partial Class themTre
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(370, 104)
+        Me.Label6.Location = New System.Drawing.Point(397, 103)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 13)
         Me.Label6.TabIndex = 5
@@ -101,7 +99,7 @@ Partial Class themTre
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(370, 150)
+        Me.Label7.Location = New System.Drawing.Point(397, 145)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 6
@@ -109,16 +107,16 @@ Partial Class themTre
         '
         'tenTr
         '
-        Me.tenTr.Location = New System.Drawing.Point(105, 55)
+        Me.tenTr.Location = New System.Drawing.Point(105, 96)
         Me.tenTr.Name = "tenTr"
         Me.tenTr.Size = New System.Drawing.Size(200, 20)
         Me.tenTr.TabIndex = 8
         '
         'hTenTr
         '
-        Me.hTenTr.Location = New System.Drawing.Point(105, 96)
+        Me.hTenTr.Location = New System.Drawing.Point(458, 193)
         Me.hTenTr.Name = "hTenTr"
-        Me.hTenTr.Size = New System.Drawing.Size(200, 20)
+        Me.hTenTr.Size = New System.Drawing.Size(158, 20)
         Me.hTenTr.TabIndex = 9
         '
         'ngaySinhTr
@@ -137,15 +135,6 @@ Partial Class themTre
         Me.tuoi.Size = New System.Drawing.Size(200, 20)
         Me.tuoi.TabIndex = 11
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(370, 201)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(39, 13)
-        Me.Label9.TabIndex = 12
-        Me.Label9.Text = "Mã lớp"
-        '
         'tenPH
         '
         Me.tenPH.Location = New System.Drawing.Point(458, 59)
@@ -155,40 +144,31 @@ Partial Class themTre
         '
         'dth
         '
-        Me.dth.Location = New System.Drawing.Point(431, 96)
+        Me.dth.Location = New System.Drawing.Point(458, 96)
         Me.dth.Name = "dth"
-        Me.dth.Size = New System.Drawing.Size(185, 20)
+        Me.dth.Size = New System.Drawing.Size(158, 20)
         Me.dth.TabIndex = 14
         '
         'diaChiTr
         '
-        Me.diaChiTr.Location = New System.Drawing.Point(420, 145)
+        Me.diaChiTr.Location = New System.Drawing.Point(458, 145)
         Me.diaChiTr.Name = "diaChiTr"
-        Me.diaChiTr.Size = New System.Drawing.Size(196, 20)
+        Me.diaChiTr.Size = New System.Drawing.Size(158, 20)
         Me.diaChiTr.TabIndex = 15
-        '
-        'maLop
-        '
-        Me.maLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.maLop.FormattingEnabled = True
-        Me.maLop.Location = New System.Drawing.Point(420, 192)
-        Me.maLop.Name = "maLop"
-        Me.maLop.Size = New System.Drawing.Size(196, 21)
-        Me.maLop.TabIndex = 17
         '
         'maTr
         '
         Me.maTr.BackColor = System.Drawing.SystemColors.Control
-        Me.maTr.Location = New System.Drawing.Point(105, 12)
+        Me.maTr.Location = New System.Drawing.Point(105, 55)
         Me.maTr.Name = "maTr"
         Me.maTr.ReadOnly = True
-        Me.maTr.Size = New System.Drawing.Size(102, 20)
+        Me.maTr.Size = New System.Drawing.Size(200, 20)
         Me.maTr.TabIndex = 18
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(53, 18)
+        Me.Label8.Location = New System.Drawing.Point(52, 59)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(41, 13)
         Me.Label8.TabIndex = 19
@@ -221,11 +201,9 @@ Partial Class themTre
         Me.Controls.Add(Me.nhap)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.maTr)
-        Me.Controls.Add(Me.maLop)
         Me.Controls.Add(Me.diaChiTr)
         Me.Controls.Add(Me.dth)
         Me.Controls.Add(Me.tenPH)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.tuoi)
         Me.Controls.Add(Me.ngaySinhTr)
         Me.Controls.Add(Me.hTenTr)
@@ -255,11 +233,9 @@ Partial Class themTre
     Friend WithEvents hTenTr As TextBox
     Friend WithEvents ngaySinhTr As DateTimePicker
     Friend WithEvents tuoi As TextBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents tenPH As TextBox
     Friend WithEvents dth As TextBox
     Friend WithEvents diaChiTr As TextBox
-    Friend WithEvents maLop As ComboBox
     Friend WithEvents maTr As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents nhap As Button

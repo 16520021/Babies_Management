@@ -32,15 +32,8 @@ Public Class TreDAL
                     .Parameters.AddWithValue("@DiaChi", Tre.DiaChi1)
                 End With
                 Try
-                    Dim lopDAL = New LopDAL()
-                    If (lopDAL.getSiSo(Tre.MaLop1) < 20) Then
-                        conn.Open()
-                        cmd.ExecuteNonQuery()
-                        lopDAL.updateSiSo(Tre.MaLop1)
-                    Else
-                        conn.Close()
-                        Return False
-                    End If
+                    conn.Open()
+                    cmd.ExecuteNonQuery()
                 Catch ex As Exception
                     conn.Close()
                     Return False
