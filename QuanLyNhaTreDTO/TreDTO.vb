@@ -1,6 +1,7 @@
 ﻿Public Class TreDTO
     Private maTre As Integer
     Private tenTre As String
+    Private tenNha As String
     Private ngaySinh As DateTime
     Private phuHuynh As String
     Private diaChi As String
@@ -67,6 +68,15 @@
         End Get
         Set(value As Integer)
             maLop = value
+        End Set
+    End Property
+
+    Public Property TenNha1 As String
+        Get
+            Return tenNha
+        End Get
+        Set(value As String)
+            tenNha = value
         End Set
     End Property
 

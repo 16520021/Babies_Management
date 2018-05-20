@@ -94,6 +94,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="themTre.Designer.vb">
+      <DependentUpon>themTre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="themTre.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="mainFrom.resx">
@@ -104,6 +110,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="themTre.resx">
+      <DependentUpon>themTre.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +126,20 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyNhaTreBUS\QuanLyNhaTreBUS.vbproj">
+      <Project>{d4384ac5-719b-4d7c-bf89-0169ed5dd582}</Project>
+      <Name>QuanLyNhaTreBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyNhaTreDAL\QuanLyNhaTreDAL.vbproj">
+      <Project>{360e2211-b73d-47ca-a1ee-b234c9067b8e}</Project>
+      <Name>QuanLyNhaTreDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyNhaTreDTO\QuanLyNhaTreDTO.vbproj">
+      <Project>{672805a8-7ad3-464e-90ed-c173f43df016}</Project>
+      <Name>QuanLyNhaTreDTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

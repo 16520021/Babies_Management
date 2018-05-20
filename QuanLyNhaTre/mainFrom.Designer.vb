@@ -49,7 +49,7 @@ Partial Class mainFrom
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CloseToolStripMenuItem.Text = "&Close"
         '
         'TreToolStripMenuItem
@@ -62,7 +62,7 @@ Partial Class mainFrom
         'ThêmTrẻToolStripMenuItem
         '
         Me.ThêmTrẻToolStripMenuItem.Name = "ThêmTrẻToolStripMenuItem"
-        Me.ThêmTrẻToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ThêmTrẻToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.ThêmTrẻToolStripMenuItem.Text = "Thêm Trẻ "
         '
         'mainFrom

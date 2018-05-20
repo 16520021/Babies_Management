@@ -1,0 +1,1 @@
+SQLCMD -S E6440-PC\SQLEXP -E -i DoAn.sql

@@ -7,6 +7,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "QuanLyNhaTre", "QuanLyNhaTr
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "QuanLyNhaTreDTO", "QuanLyNhaTreDTO\QuanLyNhaTreDTO.vbproj", "{672805A8-7AD3-464E-90ED-C173F43DF016}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "QuanLyNhaTreDAL", "QuanLyNhaTreDAL\QuanLyNhaTreDAL.vbproj", "{360E2211-B73D-47CA-A1EE-B234C9067B8E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "QuanLyNhaTreBUS", "QuanLyNhaTreBUS\QuanLyNhaTreBUS.vbproj", "{D4384AC5-719B-4D7C-BF89-0169ED5DD582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{672805A8-7AD3-464E-90ED-C173F43DF016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672805A8-7AD3-464E-90ED-C173F43DF016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672805A8-7AD3-464E-90ED-C173F43DF016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{360E2211-B73D-47CA-A1EE-B234C9067B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{360E2211-B73D-47CA-A1EE-B234C9067B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{360E2211-B73D-47CA-A1EE-B234C9067B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{360E2211-B73D-47CA-A1EE-B234C9067B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4384AC5-719B-4D7C-BF89-0169ED5DD582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4384AC5-719B-4D7C-BF89-0169ED5DD582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4384AC5-719B-4D7C-BF89-0169ED5DD582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4384AC5-719B-4D7C-BF89-0169ED5DD582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

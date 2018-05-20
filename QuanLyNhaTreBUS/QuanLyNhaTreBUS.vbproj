@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{672805A8-7AD3-464E-90ED-C173F43DF016}</ProjectGuid>
+    <ProjectGuid>{D4384AC5-719B-4D7C-BF89-0169ED5DD582}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>QuanLyNhaTreDTO</RootNamespace>
-    <AssemblyName>QuanLyNhaTreDTO</AssemblyName>
+    <RootNamespace>QuanLyNhaTreBUS</RootNamespace>
+    <AssemblyName>QuanLyNhaTreBUS</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -18,7 +18,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>QuanLyNhaTreDTO.xml</DocumentationFile>
+    <DocumentationFile>QuanLyNhaTreBUS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -27,7 +27,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>QuanLyNhaTreDTO.xml</DocumentationFile>
+    <DocumentationFile>QuanLyNhaTreBUS.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -63,8 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LopDTO.vb" />
-    <Compile Include="TreDTO.vb" />
+    <Compile Include="TreBUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +98,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyNhaTreDAL\QuanLyNhaTreDAL.vbproj">
+      <Project>{360e2211-b73d-47ca-a1ee-b234c9067b8e}</Project>
+      <Name>QuanLyNhaTreDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLyNhaTreDTO\QuanLyNhaTreDTO.vbproj">
+      <Project>{672805a8-7ad3-464e-90ed-c173f43df016}</Project>
+      <Name>QuanLyNhaTreDTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
