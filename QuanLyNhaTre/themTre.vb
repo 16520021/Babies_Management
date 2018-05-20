@@ -16,8 +16,7 @@ Public Class themTre
         tre.PhuHuynh1 = tenPH.Text
         tre.DiaChi1 = diaChiTr.Text
         tre.Sdt1 = dth.Text
-        tre.MaLop1 = maLop.SelectedItem
-
+        tre.MaLop1 = 0
         If (treBUS.isValid_Age(Integer.Parse(tuoi.Text)) = False) Then
             MessageBox.Show("tuoi phai tu 3-5 tuoi")
             tuoi.Focus()
@@ -51,14 +50,8 @@ Public Class themTre
     End Sub
 
     Private Sub themTre_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim lopDAL = New LopDAL()
-        Dim list = New List(Of Integer)
         Dim tre = New TreBUS()
         maTr.Text = tre.nxtMaTre().ToString()
-        lopDAL.getListofClass(list)
-        For Each item In list
-            maLop.Items.Add(item)
-        Next
     End Sub
 
     Private Sub dth_TextChanged(sender As Object, e As EventArgs) Handles dth.TextChanged

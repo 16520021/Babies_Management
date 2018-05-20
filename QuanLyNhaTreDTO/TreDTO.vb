@@ -83,5 +83,14 @@
     Public Sub New()
 
     End Sub
-
+    Public Sub New(matre As Integer, malop As Integer, tentre As String, tennha As String, ngaysinh As DateTime, phuhuynh As String, sdt As String, diachi As String)
+        Me.diaChi = diachi
+        Me.maTre = matre
+        Me.tenTre = tentre
+        Me.tenNha = tennha
+        Me.phuHuynh = phuhuynh
+        Me.ngaySinh = ngaysinh
+        Me.maLop = malop
+        Me.sdt = sdt
+    End Sub
 End Class

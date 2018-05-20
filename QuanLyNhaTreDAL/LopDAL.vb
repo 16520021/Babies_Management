@@ -73,7 +73,7 @@ Public Class LopDAL
         Return 0
     End Function
 
-    Public Function updateSiSo(maLop As Integer) As Boolean
+    Public Function increaseSiSo(maLop As Integer) As Boolean
         Dim query As String
         query = String.Empty
         query &= "UPDATE [LOP] SET"

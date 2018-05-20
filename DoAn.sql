@@ -79,6 +79,8 @@ GO
 USE [QLT]
 GO
 
+INSERT INTO [dbo].[KHOI]([MaKhoi],[TenKhoi],[SoLuongLop]) VALUES (0,'tu do',0)
+GO
 INSERT INTO [dbo].[KHOI]([MaKhoi],[TenKhoi],[SoLuongLop]) VALUES (1,'mam',4)
 GO
 INSERT INTO [dbo].[KHOI]([MaKhoi],[TenKhoi],[SoLuongLop]) VALUES (2,'choi',4)
@@ -93,6 +95,8 @@ INSERT INTO [dbo].[THAMSO] ([TuoiMin],[TuoiMax],[SiSoMax]) VALUES (3,5,20)
 GO
 
 USE [QLT]
+GO
+INSERT INTO [dbo].[LOP]([MaLop],[MaKhoi],[TenLop],[SiSo]) VALUES (0,0,'tu do',0)
 GO
 INSERT INTO [dbo].[LOP]([MaLop],[MaKhoi],[TenLop],[SiSo]) VALUES (11,1,'mam 1',0)
 GO
