@@ -27,12 +27,13 @@ Partial Class mainFrom
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThêmTrẻToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.XếpLớpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.TreToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.TreToolStripMenuItem, Me.XếpLớpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(848, 24)
@@ -49,7 +50,7 @@ Partial Class mainFrom
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
         Me.CloseToolStripMenuItem.Text = "&Close"
         '
         'TreToolStripMenuItem
@@ -64,6 +65,12 @@ Partial Class mainFrom
         Me.ThêmTrẻToolStripMenuItem.Name = "ThêmTrẻToolStripMenuItem"
         Me.ThêmTrẻToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
         Me.ThêmTrẻToolStripMenuItem.Text = "Thêm Trẻ "
+        '
+        'XếpLớpToolStripMenuItem
+        '
+        Me.XếpLớpToolStripMenuItem.Name = "XếpLớpToolStripMenuItem"
+        Me.XếpLớpToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.XếpLớpToolStripMenuItem.Text = "Xếp Lớp"
         '
         'mainFrom
         '
@@ -88,4 +95,5 @@ Partial Class mainFrom
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TreToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ThêmTrẻToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents XếpLớpToolStripMenuItem As ToolStripMenuItem
 End Class
