@@ -50,13 +50,16 @@ CREATE TABLE [dbo].[TINHTRANG](
 );
 CREATE TABLE [dbo].[TRE](
 	[MaTre] [int] NOT NULL,
-	[MaLop] [int] NOT NULL,
+	[MaLop] [int] ,
 	[HoTenTre] [nvarchar](30) NOT NULL,
 	[TenNha] [nvarchar] (10) NOT NULL,
 	[NgaySinh] [smalldatetime] NOT NULL,
 	[PhuHuynh] [nvarchar](30) NOT NULL,
 	[DienThoai] [nvarchar] (11) NOT NULL,
 	[DiaChi] [nvarchar] (60) NOT NULL,
+	[Tuoi] [int] NOT NULL,
+	[NgayNhapHoc] smalldatetime,
+	[GhiChu] [nvarchar] (60) ,
 	CONSTRAINT [PK_MaTre] PRIMARY KEY (MaTre),
 	CONSTRAINT [FK_MaLop] FOREIGN KEY (MaLop) REFERENCES [LOP] (MaLop)
 );
@@ -79,8 +82,6 @@ GO
 USE [QLT]
 GO
 
-INSERT INTO [dbo].[KHOI]([MaKhoi],[TenKhoi],[SoLuongLop]) VALUES (0,'tu do',0)
-GO
 INSERT INTO [dbo].[KHOI]([MaKhoi],[TenKhoi],[SoLuongLop]) VALUES (1,'mam',4)
 GO
 INSERT INTO [dbo].[KHOI]([MaKhoi],[TenKhoi],[SoLuongLop]) VALUES (2,'choi',4)
@@ -95,8 +96,6 @@ INSERT INTO [dbo].[THAMSO] ([TuoiMin],[TuoiMax],[SiSoMax]) VALUES (3,5,20)
 GO
 
 USE [QLT]
-GO
-INSERT INTO [dbo].[LOP]([MaLop],[MaKhoi],[TenLop],[SiSo]) VALUES (0,0,'tu do',0)
 GO
 INSERT INTO [dbo].[LOP]([MaLop],[MaKhoi],[TenLop],[SiSo]) VALUES (11,1,'mam 1',0)
 GO
