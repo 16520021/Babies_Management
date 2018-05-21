@@ -7,6 +7,9 @@
     Private diaChi As String
     Private sdt As String
     Private maLop As Integer
+    Private tuoi As Integer
+    Private ngayHoc As Nullable(Of DateTime) = Nothing
+    Private ghiChu As String
 
     Public Property MaTre1 As Integer
         Get
@@ -77,6 +80,34 @@
         End Get
         Set(value As String)
             tenNha = value
+        End Set
+    End Property
+
+    Public Property Tuoi1 As Integer
+        Get
+            Return tuoi
+        End Get
+        Set(value As Integer)
+            tuoi = value
+        End Set
+    End Property
+
+
+    Public Property GhiChu1 As String
+        Get
+            Return ghiChu
+        End Get
+        Set(value As String)
+            ghiChu = value
+        End Set
+    End Property
+
+    Public Property NgayHoc1 As Date?
+        Get
+            Return ngayHoc
+        End Get
+        Set(value As Date?)
+            ngayHoc = value
         End Set
     End Property
 

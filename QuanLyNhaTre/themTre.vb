@@ -16,7 +16,8 @@ Public Class themTre
         tre.PhuHuynh1 = tenPH.Text
         tre.DiaChi1 = diaChiTr.Text
         tre.Sdt1 = dth.Text
-        tre.MaLop1 = 0
+        tre.Tuoi1 = Integer.Parse(tuoi.Text)
+
         If (treBUS.isValid_Age(Integer.Parse(tuoi.Text)) = False) Then
             MessageBox.Show("tuoi phai tu 3-5 tuoi")
             tuoi.Focus()

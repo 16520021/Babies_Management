@@ -15,8 +15,8 @@ Public Class TreDAL
     Public Function insert(Tre As TreDTO) As Boolean
         Dim query As String
         query = String.Empty
-        query &= "INSERT INTO TRE([MaTre],[MaLop],[HoTenTre],[TenNha],[NgaySinh],[PhuHuynh],[DienThoai],[DiaChi])"
-        query &= "VALUES(@MaTre,@MaLop,@HoTenTre,@TenNha,@NgaySinh,@PhuHuynh,@DienThoai,@DiaChi)"
+        query &= "INSERT INTO TRE([MaTre],[HoTenTre],[TenNha],[NgaySinh],[PhuHuynh],[DienThoai],[DiaChi],[Tuoi])"
+        query &= "VALUES(@MaTre,@HoTenTre,@TenNha,@NgaySinh,@PhuHuynh,@DienThoai,@DiaChi,@Tuoi)"
         Using conn As New SqlConnection(connectionString)
             Using cmd As New SqlCommand()
                 With cmd
@@ -24,13 +24,13 @@ Public Class TreDAL
                     .CommandType = CommandType.Text
                     .CommandText = query
                     .Parameters.AddWithValue("@MaTre", Tre.MaTre1)
-                    .Parameters.AddWithValue("@MaLop", Tre.MaLop1)
                     .Parameters.AddWithValue("@HoTenTre", Tre.TenTre1)
                     .Parameters.AddWithValue("@TenNha", Tre.TenNha1)
                     .Parameters.AddWithValue("@NgaySinh", Tre.NgaySinh1)
                     .Parameters.AddWithValue("@PhuHuynh", Tre.PhuHuynh1)
                     .Parameters.AddWithValue("@DienThoai", Tre.Sdt1)
                     .Parameters.AddWithValue("@DiaChi", Tre.DiaChi1)
+                    .Parameters.AddWithValue("@Tuoi", Tre.Tuoi1)
                 End With
                 Try
                     conn.Open()
