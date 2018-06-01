@@ -63,6 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KhoiDTO.vb" />
     <Compile Include="LopDTO.vb" />
     <Compile Include="TreDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

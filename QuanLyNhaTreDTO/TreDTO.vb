@@ -8,7 +8,7 @@
     Private sdt As String
     Private maLop As Integer
     Private tuoi As Integer
-    Private ngayHoc As Nullable(Of DateTime) = Nothing
+    Private ngayHoc As DateTime
     Private ghiChu As String
 
     Public Property MaTre1 As Integer
@@ -102,11 +102,11 @@
         End Set
     End Property
 
-    Public Property NgayHoc1 As Date?
+    Public Property NgayHoc1 As Date
         Get
             Return ngayHoc
         End Get
-        Set(value As Date?)
+        Set(value As Date)
             ngayHoc = value
         End Set
     End Property
@@ -114,14 +114,11 @@
     Public Sub New()
 
     End Sub
-    Public Sub New(matre As Integer, malop As Integer, tentre As String, tennha As String, ngaysinh As DateTime, phuhuynh As String, sdt As String, diachi As String)
-        Me.diaChi = diachi
+    Public Sub New(matre As Integer, tentre As String, tuoi As Integer)
+
         Me.maTre = matre
         Me.tenTre = tentre
-        Me.tenNha = tennha
-        Me.phuHuynh = phuhuynh
-        Me.ngaySinh = ngaysinh
-        Me.maLop = malop
-        Me.sdt = sdt
+
+        Me.tuoi = tuoi
     End Sub
 End Class

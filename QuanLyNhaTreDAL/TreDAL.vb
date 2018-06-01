@@ -143,16 +143,24 @@ Public Class TreDAL
 
     Public Function getListOfTre_byMaLop(ByRef listoftre As List(Of TreDTO), malop As Integer) As List(Of TreDTO)
         Dim query As String = String.Empty
-        query &= "SELECT * "
+
+        query &= "SELECT [MaTre],[HoTenTre],[Tuoi] "
         query &= " FROM [TRE]"
-        query &= " WHERE [MaLop] = @malop"
+        If (malop <> 0) Then
+            query &= " WHERE [MaLop] = @malop"
+        Else
+            query &= "WHERE [MaLop] IS NULL"
+        End If
+
         Using conn As New SqlConnection(connectionString)
             Using com As New SqlCommand
                 With com
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@malop", malop)
+                    If (malop <> 0) Then
+                        .Parameters.AddWithValue("@malop", malop)
+                    End If
                 End With
                 Try
                     conn.Open()
@@ -160,7 +168,7 @@ Public Class TreDAL
                     reader = com.ExecuteReader()
                     If reader.HasRows = True Then
                         While reader.Read()
-                            listoftre.Add(New TreDTO(reader("MaTre"), reader("MaLop"), reader("HoTenTre"), reader("TenNha"), reader("NgaySinh"), reader("PhuHuynh"), reader("DienThoai"), reader("DiaChi")))
+                            listoftre.Add(New TreDTO(reader("MaTre"), reader("HoTenTre"), reader("Tuoi")))
                         End While
                     Else
                         listoftre = Nothing
@@ -172,5 +180,12 @@ Public Class TreDAL
             End Using
         End Using
         Return listoftre
+    End Function
+
+    Public Function updateTre(Tre As TreDTO) As Boolean
+        Dim query As String = String.Empty
+        query &= "UPDATE [TRE]"
+        query &= "SET [NgayNhapHoc] = @ngaynhaphoc,[GhiChu] = @ghichu,[MaLop] = @malop"
+        query &= "WHERE [MaTre] = @matre"
     End Function
 End Class
