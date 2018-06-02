@@ -4,12 +4,13 @@ Imports QuanLyNhaTreDTO
 
 Public Class xepLop
     Public selectedIndex As Integer
+    Public maLopCu As Integer = 0
 
     Private Sub xepLop_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim khoiDAL As KhoiDAL = New KhoiDAL()
         Dim listKhoi As List(Of String) = New List(Of String)
-        khoiDAL.getListofMaKhoi(listKhoi)
+        khoiDAL.getListofTenKhoi(listKhoi)
 
         For i = 0 To listKhoi.Count - 1 Step 1
             comboKhoi.Items.Add(listKhoi(i))
@@ -44,6 +45,7 @@ Public Class xepLop
 
     Private Sub frmLop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles frmLop.SelectedIndexChanged
 
+        inputDataGrid.Rows.Clear()
         Dim treDAL As TreDAL = New TreDAL()
         Dim lopDAL As LopDAL = New LopDAL()
         Dim malop As Integer = 0
@@ -63,19 +65,36 @@ Public Class xepLop
                 inputDataGrid.Rows(i).Cells(1).Value = listoftre.Item(i).TenTre1
                 inputDataGrid.Rows(i).Cells(2).Value = ngayhoc.Value.Date
                 inputDataGrid.Rows(i).Cells(3).Value = listoftre.Item(i).Tuoi1
+                inputDataGrid.Rows(i).Cells(4).Value = ghChu.Text
             Next
         Catch ex As Exception
-            inputDataGrid.Rows.Clear()
         End Try
+        maLopCu = malop
     End Sub
 
     Private Sub forward_Click(sender As Object, e As EventArgs) Handles forward.Click
+
+        If (inputDataGrid.Rows(selectedIndex).Cells(3).Value = 3 And comboKhoi.SelectedItem <> "mam") Then
+            MessageBox.Show("tre 3 tuoi chi duoc hoc lop mam")
+            Return
+        End If
+        If (inputDataGrid.Rows(selectedIndex).Cells(3).Value = 4 And comboKhoi.SelectedItem <> "choi") Then
+            MessageBox.Show("tre 4 tuoi chi duoc hoc lop choi")
+            Return
+        End If
+        If (inputDataGrid.Rows(selectedIndex).Cells(3).Value = 5 And comboKhoi.SelectedItem <> "la") Then
+            MessageBox.Show("tre 5 tuoi chi duoc hoc lop la")
+            Return
+        End If
+
         Dim n As Integer = newInputDataGrid.Rows.Add()
+        Dim lopdal As KhoiDAL = New KhoiDAL()
 
         newInputDataGrid.Rows(n).Cells(0).Value = inputDataGrid.Rows(selectedIndex).Cells(0).Value
         newInputDataGrid.Rows(n).Cells(1).Value = inputDataGrid.Rows(selectedIndex).Cells(1).Value
         newInputDataGrid.Rows(n).Cells(2).Value = inputDataGrid.Rows(selectedIndex).Cells(2).Value
         newInputDataGrid.Rows(n).Cells(3).Value = inputDataGrid.Rows(selectedIndex).Cells(3).Value
+        newInputDataGrid.Rows(n).Cells(4).Value = inputDataGrid.Rows(selectedIndex).Cells(4).Value
 
         inputDataGrid.Rows.RemoveAt(selectedIndex)
     End Sub
@@ -92,6 +111,7 @@ Public Class xepLop
         inputDataGrid.Rows(n).Cells(1).Value = newInputDataGrid.Rows(selectedIndex).Cells(1).Value
         inputDataGrid.Rows(n).Cells(2).Value = newInputDataGrid.Rows(selectedIndex).Cells(2).Value
         inputDataGrid.Rows(n).Cells(3).Value = newInputDataGrid.Rows(selectedIndex).Cells(3).Value
+        inputDataGrid.Rows(n).Cells(4).Value = newInputDataGrid.Rows(selectedIndex).Cells(4).Value
 
         newInputDataGrid.Rows.RemoveAt(selectedIndex)
     End Sub
@@ -108,8 +128,42 @@ Public Class xepLop
         Catch ex As Exception
             MessageBox.Show("vui long nhap ghi chu hoac dung bam nut !")
         End Try
-
     End Sub
 
+    Private Sub update_Click(sender As Object, e As EventArgs) Handles update.Click
+
+        Dim tredal As TreDAL = New TreDAL()
+        Dim lopdal As LopDAL = New LopDAL()
+        Dim malop As Integer = 0
+        Dim isSucceeded = False
+        Try
+            malop = lopdal.getMaLop_ByTenLop(toLop.SelectedItem.ToString())
+            If (maLopCu = 0) Then
+                For i = 0 To newInputDataGrid.Rows.Count() - 1 Step 1
+                    tredal.updateTre_NullField(newInputDataGrid.Rows(i).Cells(0).Value, newInputDataGrid.Rows(i).Cells(2).Value, newInputDataGrid.Rows(i).Cells(4).Value, malop)
+                    isSucceeded = lopdal.increaseSiSo(malop)
+                    If (isSucceeded = False) Then
+                        MessageBox.Show(" da du si so gioi han ")
+                    Else
+                        MessageBox.Show("them thanh cong")
+                    End If
+                Next
+            Else
+                For i = 0 To newInputDataGrid.Rows.Count() - 1 Step 1
+                    tredal.updateTre_NullField(newInputDataGrid.Rows(i).Cells(0).Value, newInputDataGrid.Rows(i).Cells(2).Value, newInputDataGrid.Rows(i).Cells(4).Value, malop)
+                    isSucceeded = lopdal.increaseSiSo(malop)
+                    If (isSucceeded = False) Then
+                        MessageBox.Show(" da du si so gioi han ")
+                    Else
+                        MessageBox.Show("them thanh cong")
+                        lopdal.decreaseSiSo(maLopCu)
+                    End If
+                Next
+            End If
+        Catch ex As Exception
+            MessageBox.Show("khong co hoc sinh nao chuyen lop")
+        End Try
+        Me.Close()
+    End Sub
 
 End Class

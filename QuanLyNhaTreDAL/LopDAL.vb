@@ -167,4 +167,34 @@ Public Class LopDAL
         End Using
         Return malop
     End Function
+
+    Public Function decreaseSiSo(maLop As Integer) As Boolean
+        Dim query As String
+        query = String.Empty
+        query &= "UPDATE [LOP] SET"
+        query &= " [SiSo] = @ss"
+        query &= " WHERE "
+        query &= "[MaLop] = @maLop"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@ss", getSiSo(maLop) - 1)
+                    .Parameters.AddWithValue("@maLop", maLop)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+
+                Catch ex As Exception
+                    conn.Close()
+                    Return False
+                End Try
+            End Using
+        End Using
+        Return True
+    End Function
+
 End Class

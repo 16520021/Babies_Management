@@ -47,6 +47,8 @@ Partial Class xepLop
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ghChu = New System.Windows.Forms.TextBox()
         Me.Nhan = New System.Windows.Forms.Button()
+        Me.update = New System.Windows.Forms.Button()
+        Me.cancel = New System.Windows.Forms.Button()
         CType(Me.inputDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.newInputDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -248,11 +250,31 @@ Partial Class xepLop
         Me.Nhan.Text = "Nhận thông tin"
         Me.Nhan.UseVisualStyleBackColor = True
         '
+        'update
+        '
+        Me.update.Location = New System.Drawing.Point(222, 529)
+        Me.update.Name = "update"
+        Me.update.Size = New System.Drawing.Size(123, 46)
+        Me.update.TabIndex = 16
+        Me.update.Text = "Nhập"
+        Me.update.UseVisualStyleBackColor = True
+        '
+        'cancel
+        '
+        Me.cancel.Location = New System.Drawing.Point(844, 529)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Size = New System.Drawing.Size(123, 46)
+        Me.cancel.TabIndex = 17
+        Me.cancel.Text = "Hủy"
+        Me.cancel.UseVisualStyleBackColor = True
+        '
         'xepLop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1198, 599)
+        Me.Controls.Add(Me.cancel)
+        Me.Controls.Add(Me.update)
         Me.Controls.Add(Me.Nhan)
         Me.Controls.Add(Me.ghChu)
         Me.Controls.Add(Me.Label2)
@@ -302,4 +324,6 @@ Partial Class xepLop
     Friend WithEvents Label2 As Label
     Friend WithEvents ghChu As TextBox
     Friend WithEvents Nhan As Button
+    Friend WithEvents update As Button
+    Friend WithEvents cancel As Button
 End Class

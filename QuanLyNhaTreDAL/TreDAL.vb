@@ -182,10 +182,31 @@ Public Class TreDAL
         Return listoftre
     End Function
 
-    Public Function updateTre(Tre As TreDTO) As Boolean
+    Public Function updateTre_NullField(matre As Integer, ngaynhaphoc As DateTime, ghichu As String, malop As Integer) As Boolean
         Dim query As String = String.Empty
         query &= "UPDATE [TRE]"
-        query &= "SET [NgayNhapHoc] = @ngaynhaphoc,[GhiChu] = @ghichu,[MaLop] = @malop"
-        query &= "WHERE [MaTre] = @matre"
+        query &= " SET [NgayNhapHoc] = @ngaynhaphoc,[GhiChu] = @ghichu,[MaLop] = @malop"
+        query &= " WHERE [MaTre] = @matre"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@ngaynhaphoc", ngaynhaphoc)
+                    .Parameters.AddWithValue("@malop", malop)
+                    .Parameters.AddWithValue("@ghichu", ghichu)
+                    .Parameters.AddWithValue("@matre", matre)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    Return False
+                End Try
+            End Using
+        End Using
+        Return True
     End Function
 End Class

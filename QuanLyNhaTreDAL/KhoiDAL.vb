@@ -12,7 +12,7 @@ Public Class KhoiDAL
         Me.connectionString = ConnectionString
     End Sub
 
-    Public Function getListofMaKhoi(ByRef listKhoi As List(Of String)) As List(Of String)
+    Public Function getListofTenKhoi(ByRef listKhoi As List(Of String)) As List(Of String)
         Dim query As String = String.Empty
         query &= "SELECT [TenKhoi] "
         query &= "FROM [KHOI]"
