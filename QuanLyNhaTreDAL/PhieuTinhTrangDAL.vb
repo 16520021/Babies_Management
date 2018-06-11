@@ -17,7 +17,7 @@ Public Class PhieuTinhTrangDAL
         Dim query As String
         query = String.Empty
         query &= "INSERT INTO PHIEUTINHTRANG([MaPhieu],[MaTT],[MaTre],[Ngay])"
-        query &= " VALUES(@MaPhieu,@MaTT,@MaTre,@Ngay)"
+        query &= "VALUES(@MaPhieu,@MaTT,@MaTre,@Ngay)"
         Using conn As New SqlConnection(connectionString)
             Using cmd As New SqlCommand()
                 With cmd

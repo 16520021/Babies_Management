@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baocaoTinhTrangTre.Designer.vb">
+      <DependentUpon>baocaoTinhTrangTre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="baocaoTinhTrangTre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mainFrom.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="baocaoTinhTrangTre.resx">
+      <DependentUpon>baocaoTinhTrangTre.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainFrom.resx">
       <DependentUpon>mainFrom.vb</DependentUpon>
     </EmbeddedResource>
