@@ -63,6 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baocaoTinhTrangTreDTO.vb" />
     <Compile Include="KhoiDTO.vb" />
     <Compile Include="LopDTO.vb" />
     <Compile Include="PhieuTinhTrangDTO.vb" />

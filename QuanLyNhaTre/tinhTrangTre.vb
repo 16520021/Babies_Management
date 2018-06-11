@@ -21,7 +21,6 @@ Public Class tinhTrangTre
         Dim phieutinhtrang As PhieuTinhTrangDAL = New PhieuTinhTrangDAL()
         phieutinhtrang.getTinhTrang(TT)
         ComboTT.Items.AddRange(TT.Keys.ToArray())
-        maTT.Text = TT(ComboTT.SelectedItem)
 
     End Sub
 

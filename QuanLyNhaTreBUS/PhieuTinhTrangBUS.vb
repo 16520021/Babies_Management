@@ -24,7 +24,7 @@ Public Class PhieuTinhTrangBUS
 
     Public Function getNextMaPhieu(ByRef maphieu As Integer) As Integer
         Dim tinhtrangdal As PhieuTinhTrangDAL = New PhieuTinhTrangDAL()
-        maphieu = tinhtrangdal.getLastMaPhieu
+        maphieu = tinhtrangdal.getLastMaPhieu + 1
         Return maphieu
     End Function
 End Class

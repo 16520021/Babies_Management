@@ -46,6 +46,7 @@ Public Class themTre
             MessageBox.Show("them tre khong thanh cong")
         Else
             MessageBox.Show("them tre thanh cong")
+            Me.Close()
         End If
 
     End Sub

@@ -31,4 +31,11 @@
             tc.Show()
         End If
     End Sub
+
+    Private Sub TìnhTrạngTrẻToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TìnhTrạngTrẻToolStripMenuItem.Click
+        Dim bc As baocaoTinhTrangTre = New baocaoTinhTrangTre
+        If (Application.OpenForms().OfType(Of baocaoTinhTrangTre).Any = Nothing) Then
+            bc.Show()
+        End If
+    End Sub
 End Class
