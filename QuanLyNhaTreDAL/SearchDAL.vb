@@ -15,22 +15,18 @@ Public Class SearchDAL
     Public Function search(srh As SearchDTO, ByRef listsrh As List(Of SearchDTO), mode As Integer) As Boolean
         Dim query As String = String.Empty
         query &= "SELECT [TRE].[HoTenTre],[TRE].[Tuoi],[TRE].[MaLop],[GhiChu]"
-        If (srh.Khoi1.TenKhoi1 = "NULL") Then
-            query &= " FROM [TRE]"
-        Else
-            query &= " FROM ((([TRE]"
-            query &= " LEFT JOIN [LOP] ON [TRE].[MaLop] = [LOP].[MaLop] )"
-            query &= " INNER JOIN [KHOI] ON [LOP].[MaKhoi] = [KHOI].[MaKhoi] )"
-            query &= " LEFT JOIN [PHIEUTINHTRANG] ON [TRE].[MaTre] = [PHIEUTINHTRANG].[MaTre] )"
-        End If
+        query &= " FROM ((([TRE]"
+        query &= " LEFT JOIN [LOP] ON [TRE].[MaLop] = [LOP].[MaLop] )"
+        query &= " LEFT JOIN [KHOI] ON [LOP].[MaKhoi] = [KHOI].[MaKhoi] )"
+        query &= " LEFT JOIN [PHIEUTINHTRANG] ON [TRE].[MaTre] = [PHIEUTINHTRANG].[MaTre] )"
 
         Select Case mode
             Case 1
                 If (srh.Khoi1.TenKhoi1 = "NULL") Then
                     query &= "WHERE [TRE].[MaLop] IS NULL "
                 Else
-                    query &= "WHERE [KHOI].[MaKhoi] = @makhoi "
-                    query &= "OR [TRE].[MaLop] = @malop "
+                    query &= "WHERE [KHOI].[TenKhoi] = @tenkhoi "
+                    query &= "AND [TRE].[MaLop] = @malop "
                 End If
             Case 2
                 query &= "WHERE  [TRE].[HoTenTre] LIKE '%@hoten%' "
@@ -53,7 +49,7 @@ Public Class SearchDAL
                     Select Case mode
                         Case 1
                             .Parameters.AddWithValue("@tenkhoi", srh.Khoi1.TenKhoi1)
-                            .Parameters.AddWithValue("@tenlop", srh.Lop1.TenLop1)
+                            .Parameters.AddWithValue("@malop", srh.Lop1.MaLop1)
                         Case 2
                             .Parameters.AddWithValue("@hoten", srh.Tre1.TenTre1)
                         Case 3

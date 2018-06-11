@@ -30,11 +30,11 @@ Public Class traCuuTre
         Dim srhDTO As SearchDTO = New SearchDTO()
         Dim lopDAL As LopDAL = New LopDAL()
         Dim srhlist As List(Of SearchDTO) = New List(Of SearchDTO)
-
+        outputDataGrid.Rows.Clear()
         Select Case mode
             Case 1
                 srhDTO.Khoi1.TenKhoi1 = comboKhoi.SelectedItem
-                srhDTO.Lop1.TenLop1 = comboLop.SelectedItem
+                srhDTO.Lop1.MaLop1 = lopDAL.getMaLop_ByTenLop(comboLop.SelectedItem)
             Case 2
                 srhDTO.Tre1.TenTre1 = txtTen.Text
             Case 3
