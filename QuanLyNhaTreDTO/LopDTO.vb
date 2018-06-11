@@ -1,7 +1,7 @@
 ﻿Public Class LopDTO
     Private maLop As Integer
     Private maKhoi As Integer
-    Private tenKhoi As String
+    Private tenLop As String
     Private siSo As Integer
 
     Public Sub New()
@@ -28,12 +28,12 @@
         End Set
     End Property
 
-    Public Property TenKhoi1 As String
+    Public Property TenLop1 As String
         Get
-            Return tenKhoi
+            Return tenLop
         End Get
         Set(value As String)
-            tenKhoi = value
+            tenLop = value
         End Set
     End Property
 

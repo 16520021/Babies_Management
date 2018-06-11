@@ -100,6 +100,18 @@
     <Compile Include="themTre.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="tinhTrangTre.Designer.vb">
+      <DependentUpon>tinhTrangTre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="tinhTrangTre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="traCuuTre.Designer.vb">
+      <DependentUpon>traCuuTre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="traCuuTre.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="xepLop.Designer.vb">
       <DependentUpon>xepLop.vb</DependentUpon>
     </Compile>
@@ -119,6 +131,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="themTre.resx">
       <DependentUpon>themTre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tinhTrangTre.resx">
+      <DependentUpon>tinhTrangTre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="traCuuTre.resx">
+      <DependentUpon>traCuuTre.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xepLop.resx">
       <DependentUpon>xepLop.vb</DependentUpon>

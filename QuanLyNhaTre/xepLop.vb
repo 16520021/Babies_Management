@@ -5,7 +5,6 @@ Imports QuanLyNhaTreDTO
 Public Class xepLop
     Public selectedIndex As Integer
     Public maLopCu As Integer = 0
-
     Private Sub xepLop_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim khoiDAL As KhoiDAL = New KhoiDAL()
@@ -74,6 +73,10 @@ Public Class xepLop
 
     Private Sub forward_Click(sender As Object, e As EventArgs) Handles forward.Click
 
+        If (inputDataGrid.RowCount() = 0) Then
+            Return
+        End If
+
         If (inputDataGrid.Rows(selectedIndex).Cells(3).Value = 3 And comboKhoi.SelectedItem <> "mam") Then
             MessageBox.Show("tre 3 tuoi chi duoc hoc lop mam")
             Return
@@ -105,6 +108,10 @@ Public Class xepLop
     End Sub
 
     Private Sub backward_Click(sender As Object, e As EventArgs) Handles backward.Click
+
+        If (newInputDataGrid.RowCount() = 0) Then
+            Return
+        End If
         Dim n As Integer = inputDataGrid.Rows.Add()
 
         inputDataGrid.Rows(n).Cells(0).Value = newInputDataGrid.Rows(selectedIndex).Cells(0).Value
@@ -166,4 +173,7 @@ Public Class xepLop
         Me.Close()
     End Sub
 
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        Me.Close()
+    End Sub
 End Class

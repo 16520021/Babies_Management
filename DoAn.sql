@@ -1,8 +1,3 @@
-/****** To insert Vietnames:  ******/
-/****** 1. make sure script in Unicode-16 ******/
-/****** 2. Put N before Vietnames text ******/
-/******    Example: N'Nguyễn Công Hoan' ******/
-
 USE [master]
 GO
 
@@ -120,4 +115,13 @@ GO
 INSERT INTO [dbo].[LOP]([MaLop],[MaKhoi],[TenLop],[SiSo]) VALUES (33,3,'la 3',0)
 GO
 INSERT INTO [dbo].[LOP]([MaLop],[MaKhoi],[TenLop],[SiSo]) VALUES (34,3,'la 4',0)
+GO
+
+USE [QLT]
+GO
+INSERT INTO [dbo].[TINHTRANG]([MaTT],[TinhTrang]) VALUES (1,'ngoan')
+GO
+INSERT INTO [dbo].[TINHTRANG]([MaTT],[TinhTrang]) VALUES (2,'bieng an')
+GO
+INSERT INTO [dbo].[TINHTRANG]([MaTT],[TinhTrang]) VALUES (3,'benh')
 GO

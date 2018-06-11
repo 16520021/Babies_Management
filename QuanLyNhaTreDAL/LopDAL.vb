@@ -12,9 +12,9 @@ Public Class LopDAL
         Me.connectionString = ConnectionString
     End Sub
 
-    Public Function getListofClass(ByRef listofclass As List(Of Integer)) As List(Of Integer)
+    Public Function getListofClass(ByRef listofclass As List(Of String)) As List(Of String)
         Dim query = String.Empty
-        query &= "SELECT [MaLop]"
+        query &= "SELECT [TenLop]"
         query &= "FROM [LOP]"
         Using conn As New SqlConnection(connectionString)
             Using com As New SqlCommand
@@ -30,7 +30,7 @@ Public Class LopDAL
                     If reader.HasRows = True Then
                         listofclass.Clear()
                         While reader.Read()
-                            listofclass.Add(reader("MaLop"))
+                            listofclass.Add(reader("TenLop"))
                         End While
                     End If
                 Catch ex As Exception

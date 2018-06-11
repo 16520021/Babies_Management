@@ -11,7 +11,7 @@ Public Class themTre
 
         tre.MaTre1 = Integer.Parse(maTr.Text)
         tre.TenTre1 = tenTr.Text
-        tre.NgaySinh1 = ngaySinhTr.Value
+        tre.NgaySinh1 = ngaySinhTr.Value.Date
         tre.TenNha1 = hTenTr.Text
         tre.PhuHuynh1 = tenPH.Text
         tre.DiaChi1 = diaChiTr.Text

@@ -115,10 +115,15 @@
 
     End Sub
     Public Sub New(matre As Integer, tentre As String, tuoi As Integer)
-
         Me.maTre = matre
         Me.tenTre = tentre
-
         Me.tuoi = tuoi
+    End Sub
+
+    Public Sub New(tentre As String, tuoi As Integer, malop As Integer, ghichu As String)
+        Me.tenTre = tentre
+        Me.tuoi = tuoi
+        Me.maLop = malop
+        Me.ghiChu = ghichu
     End Sub
 End Class

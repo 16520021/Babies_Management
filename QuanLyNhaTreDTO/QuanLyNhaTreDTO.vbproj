@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="KhoiDTO.vb" />
     <Compile Include="LopDTO.vb" />
+    <Compile Include="PhieuTinhTrangDTO.vb" />
+    <Compile Include="SearchDTO.vb" />
     <Compile Include="TreDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

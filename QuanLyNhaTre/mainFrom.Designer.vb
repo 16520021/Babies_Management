@@ -26,14 +26,17 @@ Partial Class mainFrom
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ThêmTrẻToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.XếpLớpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.themTre = New System.Windows.Forms.ToolStripMenuItem()
+        Me.traCuu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TT = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Lop = New System.Windows.Forms.ToolStripMenuItem()
+        Me.xepLop = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.TreToolStripMenuItem, Me.XếpLớpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.TreToolStripMenuItem, Me.Lop})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(848, 24)
@@ -55,22 +58,41 @@ Partial Class mainFrom
         '
         'TreToolStripMenuItem
         '
-        Me.TreToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThêmTrẻToolStripMenuItem})
+        Me.TreToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.themTre, Me.traCuu, Me.TT})
         Me.TreToolStripMenuItem.Name = "TreToolStripMenuItem"
         Me.TreToolStripMenuItem.Size = New System.Drawing.Size(36, 20)
         Me.TreToolStripMenuItem.Text = "&Trẻ"
         '
-        'ThêmTrẻToolStripMenuItem
+        'themTre
         '
-        Me.ThêmTrẻToolStripMenuItem.Name = "ThêmTrẻToolStripMenuItem"
-        Me.ThêmTrẻToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
-        Me.ThêmTrẻToolStripMenuItem.Text = "Thêm Trẻ "
+        Me.themTre.Name = "themTre"
+        Me.themTre.Size = New System.Drawing.Size(152, 22)
+        Me.themTre.Text = "Thêm Trẻ "
         '
-        'XếpLớpToolStripMenuItem
+        'traCuu
         '
-        Me.XếpLớpToolStripMenuItem.Name = "XếpLớpToolStripMenuItem"
-        Me.XếpLớpToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
-        Me.XếpLớpToolStripMenuItem.Text = "Xếp Lớp"
+        Me.traCuu.Name = "traCuu"
+        Me.traCuu.Size = New System.Drawing.Size(152, 22)
+        Me.traCuu.Text = "Tra Cứu Trẻ"
+        '
+        'TT
+        '
+        Me.TT.Name = "TT"
+        Me.TT.Size = New System.Drawing.Size(152, 22)
+        Me.TT.Text = "Tình Trạng Trẻ"
+        '
+        'Lop
+        '
+        Me.Lop.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xepLop})
+        Me.Lop.Name = "Lop"
+        Me.Lop.Size = New System.Drawing.Size(39, 20)
+        Me.Lop.Text = "Lớp"
+        '
+        'xepLop
+        '
+        Me.xepLop.Name = "xepLop"
+        Me.xepLop.Size = New System.Drawing.Size(117, 22)
+        Me.xepLop.Text = "Xếp Lớp"
         '
         'mainFrom
         '
@@ -94,6 +116,9 @@ Partial Class mainFrom
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TreToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ThêmTrẻToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents XếpLớpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents themTre As ToolStripMenuItem
+    Friend WithEvents Lop As ToolStripMenuItem
+    Friend WithEvents traCuu As ToolStripMenuItem
+    Friend WithEvents xepLop As ToolStripMenuItem
+    Friend WithEvents TT As ToolStripMenuItem
 End Class
