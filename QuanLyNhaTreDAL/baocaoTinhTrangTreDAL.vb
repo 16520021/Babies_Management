@@ -12,13 +12,21 @@ Public Class baocaoTinhTrangTreDAL
     Public Sub New(ConnectionString As String)
         Me.connectionString = ConnectionString
     End Sub
-    Public Function BaoCao(ByRef tinhtrang As List(Of baocaoTinhTrangTreDTO), dt As DateTime) As Boolean
+    Public Function BaoCao(ByRef tinhtrang As List(Of baocaoTinhTrangTreDTO), dt As DateTime, ml As Integer) As Boolean
         Dim query As String
         query = String.Empty
-        query &= "SELECT [TRE].[HoTenTre],[PHIEUTINHTRANG].[MaTT],[TRE].[MaLop],[GhiChu]"
-        query &= " FROM ([TRE]"
-        query &= " INNER JOIN [PHIEUTINHTRANG] ON [TRE].[MaTre] = [PHIEUTINHTRANG].[MaTre])"
-        query &= " WHERE [PHIEUTINHTRANG].[NGAY] = @dt"
+        If (ml = Nothing) Then
+            query &= " SELECT [TRE].[HoTenTre],[PHIEUTINHTRANG].[MaTT],[TRE].[MaLop],[GhiChu]"
+            query &= " FROM ([TRE]"
+            query &= " INNER JOIN [PHIEUTINHTRANG] ON [TRE].[MaTre] = [PHIEUTINHTRANG].[MaTre])"
+            query &= " WHERE [PHIEUTINHTRANG].[NGAY] = @dt"
+        Else
+            query &= " SELECT [TRE].[HoTenTre],[PHIEUTINHTRANG].[MaTT],[TRE].[MaLop],[GhiChu]"
+            query &= " FROM ([TRE]"
+            query &= " INNER JOIN [PHIEUTINHTRANG] ON [TRE].[MaTre] = [PHIEUTINHTRANG].[MaTre])"
+            query &= " WHERE [PHIEUTINHTRANG].[NGAY] = @dt"
+            query &= " AND [TRE].[MaLop] = @ml"
+        End If
         Using conn As New SqlConnection(connectionString)
             Using cmd As New SqlCommand()
                 With cmd
@@ -26,6 +34,7 @@ Public Class baocaoTinhTrangTreDAL
                     .CommandType = CommandType.Text
                     .CommandText = query
                     .Parameters.AddWithValue("@dt", dt)
+                    .Parameters.AddWithValue("@ml", ml)
                 End With
                 Try
                     conn.Open()

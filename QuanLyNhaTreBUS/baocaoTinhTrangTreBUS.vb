@@ -6,7 +6,7 @@ Public Class baocaoTinhTrangTreBUS
         baocaoDAL = New baocaoTinhTrangTreDAL()
     End Sub
 
-    Public Function BaoCao(ByRef tinhtrang As List(Of baocaoTinhTrangTreDTO), dt As DateTime) As Boolean
-        Return (baocaoDAL.BaoCao(tinhtrang, dt.Date))
+    Public Function BaoCao(ByRef tinhtrang As List(Of baocaoTinhTrangTreDTO), dt As DateTime, ml As Integer) As Boolean
+        Return (baocaoDAL.BaoCao(tinhtrang, dt.Date, ml))
     End Function
 End Class
