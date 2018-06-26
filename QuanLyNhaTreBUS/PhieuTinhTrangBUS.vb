@@ -27,4 +27,8 @@ Public Class PhieuTinhTrangBUS
         maphieu = tinhtrangdal.getLastMaPhieu + 1
         Return maphieu
     End Function
+
+    Public Function updateTinhTrang(oldTT As String, newTT As String) As Boolean
+        Return tinhtrangDAL.updateTinhTrang(oldTT, newTT)
+    End Function
 End Class

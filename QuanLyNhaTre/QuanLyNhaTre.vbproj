@@ -100,6 +100,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="thaydoiSiSo.Designer.vb">
+      <DependentUpon>thaydoiSiSo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="thaydoiSiSo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thaydoiTinhTrang.Designer.vb">
+      <DependentUpon>thaydoiTinhTrang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="thaydoiTinhTrang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="themTre.Designer.vb">
       <DependentUpon>themTre.vb</DependentUpon>
     </Compile>
@@ -137,6 +149,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thaydoiSiSo.resx">
+      <DependentUpon>thaydoiSiSo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thaydoiTinhTrang.resx">
+      <DependentUpon>thaydoiTinhTrang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="themTre.resx">
       <DependentUpon>themTre.vb</DependentUpon>

@@ -1,1 +1,1 @@
-SQLCMD -S NHAN-PC\HUY -E -i DoAn.sql
+SQLCMD -S E6440-PC\SQLEXP -E -i DoAn.sql

@@ -209,4 +209,36 @@ Public Class TreDAL
         End Using
         Return True
     End Function
+
+    Public Function updateMaLop(matre As Integer, malop As Integer) As Boolean
+        Dim query As String = String.Empty
+        query &= "UPDATE [TRE]"
+
+        If (malop = 0) Then
+            query &= " SET [MaLop] = NULL"
+        Else
+            query &= " SET [MaLop] = malop"
+        End If
+        query &= " WHERE [MaTre] = @matre"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matre", matre)
+                    .Parameters.AddWithValue("@malop", malop)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    Return False
+                End Try
+            End Using
+        End Using
+        Return True
+    End Function
+
 End Class

@@ -38,4 +38,11 @@
             bc.Show()
         End If
     End Sub
+
+    Private Sub thayDoiSiSo_Click(sender As Object, e As EventArgs) Handles thayDoiSiSo.Click
+        Dim ss As thaydoiSiSo = New thaydoiSiSo
+        If (Application.OpenForms().OfType(Of thaydoiSiSo).Any = Nothing) Then
+            ss.Show()
+        End If
+    End Sub
 End Class

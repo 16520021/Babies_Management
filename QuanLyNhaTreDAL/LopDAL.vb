@@ -76,32 +76,35 @@ Public Class LopDAL
     End Function
 
     Public Function increaseSiSo(maLop As Integer) As Boolean
-        Dim query As String
-        query = String.Empty
-        query &= "UPDATE [LOP] SET"
-        query &= " [SiSo] = @ss"
-        query &= " WHERE "
-        query &= "[MaLop] = @maLop"
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    .Connection = conn
-                    .CommandType = CommandType.Text
-                    .CommandText = query
-                    .Parameters.AddWithValue("@ss", getSiSo(maLop) + 1)
-                    .Parameters.AddWithValue("@maLop", maLop)
-                End With
-                Try
-                    conn.Open()
-                    comm.ExecuteNonQuery()
+        If (getSiSo(maLop) < getMaxSiSo()) Then
+            Dim query As String
+            query = String.Empty
+            query &= "UPDATE [LOP] SET"
+            query &= " [SiSo] = @ss"
+            query &= " WHERE "
+            query &= "[MaLop] = @maLop"
+            Using conn As New SqlConnection(connectionString)
+                Using comm As New SqlCommand()
+                    With comm
+                        .Connection = conn
+                        .CommandType = CommandType.Text
+                        .CommandText = query
+                        .Parameters.AddWithValue("@ss", getSiSo(maLop) + 1)
+                        .Parameters.AddWithValue("@maLop", maLop)
+                    End With
+                    Try
+                        conn.Open()
+                        comm.ExecuteNonQuery()
 
-                Catch ex As Exception
-                    conn.Close()
-                    Return False
-                End Try
+                    Catch ex As Exception
+                        conn.Close()
+                        Return False
+                    End Try
+                End Using
             End Using
-        End Using
-        Return True
+            Return True
+        End If
+        Return False
     End Function
 
     Public Function getListofClassName_ByMaKhoi(ByRef listLop As List(Of String), makhoi As String) As List(Of String)
@@ -188,6 +191,60 @@ Public Class LopDAL
                     conn.Open()
                     comm.ExecuteNonQuery()
 
+                Catch ex As Exception
+                    conn.Close()
+                    Return False
+                End Try
+            End Using
+        End Using
+        Return True
+    End Function
+
+    Public Function getMaxSiSo() As Integer
+        Dim siso As Integer = 0
+        Dim query = String.Empty
+        query &= "SELECT [SiSoMax]"
+        query &= "FROM [THAMSO]"
+        Using conn As New SqlConnection(connectionString)
+            Using com As New SqlCommand
+                With com
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = com.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            siso = reader("SiSoMax")
+                        End While
+                    End If
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return siso
+    End Function
+
+    Public Function updateMaxSiSo(siso As Integer) As Boolean
+        Dim query As String = String.Empty
+        query &= "UPDATE [THAMSO]"
+        query &= " SET [SiSoMax] = @siso"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@siso", siso)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
                 Catch ex As Exception
                     conn.Close()
                     Return False

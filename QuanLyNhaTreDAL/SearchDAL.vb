@@ -29,7 +29,7 @@ Public Class SearchDAL
                     query &= "AND [TRE].[MaLop] = @malop "
                 End If
             Case 2
-                query &= "WHERE  [TRE].[HoTenTre] LIKE '%@hoten%' "
+                query &= "WHERE  [TRE].[HoTenTre] LIKE '%" & srh.Tre1.TenTre1 & "%' "
             Case 3
                 query &= "WHERE  [Tuoi] = @tuoi "
                 query &= "AND [TenNha] = @tennha "
@@ -50,8 +50,6 @@ Public Class SearchDAL
                         Case 1
                             .Parameters.AddWithValue("@tenkhoi", srh.Khoi1.TenKhoi1)
                             .Parameters.AddWithValue("@malop", srh.Lop1.MaLop1)
-                        Case 2
-                            .Parameters.AddWithValue("@hoten", srh.Tre1.TenTre1)
                         Case 3
                             .Parameters.AddWithValue("@tuoi", srh.Tre1.Tuoi1)
                             .Parameters.AddWithValue("@tennha", srh.Tre1.TenNha1)

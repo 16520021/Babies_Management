@@ -106,4 +106,30 @@ Public Class PhieuTinhTrangDAL
         End Using
         Return maP
     End Function
+
+    Public Function updateTinhTrang(oldTT As String, str As String) As Boolean
+        Dim query As String = String.Empty
+        query &= " UPDATE [TINHTRANG]"
+        query &= " SET [TinhTrang] = @str"
+        query &= " WHERE [TinhTrang] = @oldTT"
+        Using conn As New SqlConnection(connectionString)
+            Using com As New SqlCommand
+                With com
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@str", str)
+                    .Parameters.AddWithValue("@oldTT", oldTT)
+                End With
+                Try
+                    conn.Open()
+                    com.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                End Try
+            End Using
+        End Using
+
+
+    End Function
 End Class

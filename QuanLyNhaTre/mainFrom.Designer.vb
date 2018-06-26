@@ -33,12 +33,14 @@ Partial Class mainFrom
         Me.xepLop = New System.Windows.Forms.ToolStripMenuItem()
         Me.BáoCáoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TìnhTrạngTrẻToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuiDinh = New System.Windows.Forms.ToolStripMenuItem()
+        Me.thayDoiSiSo = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.TreToolStripMenuItem, Me.Lop, Me.BáoCáoToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.TreToolStripMenuItem, Me.Lop, Me.BáoCáoToolStripMenuItem, Me.QuiDinh})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(848, 24)
@@ -62,7 +64,7 @@ Partial Class mainFrom
         '
         Me.TreToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.themTre, Me.traCuu, Me.TT})
         Me.TreToolStripMenuItem.Name = "TreToolStripMenuItem"
-        Me.TreToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
+        Me.TreToolStripMenuItem.Size = New System.Drawing.Size(36, 20)
         Me.TreToolStripMenuItem.Text = "&Trẻ"
         '
         'themTre
@@ -109,6 +111,19 @@ Partial Class mainFrom
         Me.TìnhTrạngTrẻToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.TìnhTrạngTrẻToolStripMenuItem.Text = "Tình Trạng Trẻ"
         '
+        'QuiDinh
+        '
+        Me.QuiDinh.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.thayDoiSiSo})
+        Me.QuiDinh.Name = "QuiDinh"
+        Me.QuiDinh.Size = New System.Drawing.Size(66, 20)
+        Me.QuiDinh.Text = "Qui Định"
+        '
+        'thayDoiSiSo
+        '
+        Me.thayDoiSiSo.Name = "thayDoiSiSo"
+        Me.thayDoiSiSo.Size = New System.Drawing.Size(152, 22)
+        Me.thayDoiSiSo.Text = "Thay Đổi Sỉ Số"
+        '
         'mainFrom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -138,4 +153,6 @@ Partial Class mainFrom
     Friend WithEvents TT As ToolStripMenuItem
     Friend WithEvents BáoCáoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TìnhTrạngTrẻToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuiDinh As ToolStripMenuItem
+    Friend WithEvents thayDoiSiSo As ToolStripMenuItem
 End Class
