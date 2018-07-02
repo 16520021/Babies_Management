@@ -35,6 +35,7 @@ Partial Class mainFrom
         Me.TìnhTrạngTrẻToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuiDinh = New System.Windows.Forms.ToolStripMenuItem()
         Me.thayDoiSiSo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ThayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -95,7 +96,7 @@ Partial Class mainFrom
         'xepLop
         '
         Me.xepLop.Name = "xepLop"
-        Me.xepLop.Size = New System.Drawing.Size(152, 22)
+        Me.xepLop.Size = New System.Drawing.Size(117, 22)
         Me.xepLop.Text = "Xếp Lớp"
         '
         'BáoCáoToolStripMenuItem
@@ -113,7 +114,7 @@ Partial Class mainFrom
         '
         'QuiDinh
         '
-        Me.QuiDinh.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.thayDoiSiSo})
+        Me.QuiDinh.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.thayDoiSiSo, Me.ThayToolStripMenuItem})
         Me.QuiDinh.Name = "QuiDinh"
         Me.QuiDinh.Size = New System.Drawing.Size(66, 20)
         Me.QuiDinh.Text = "Qui Định"
@@ -121,8 +122,14 @@ Partial Class mainFrom
         'thayDoiSiSo
         '
         Me.thayDoiSiSo.Name = "thayDoiSiSo"
-        Me.thayDoiSiSo.Size = New System.Drawing.Size(152, 22)
+        Me.thayDoiSiSo.Size = New System.Drawing.Size(182, 22)
         Me.thayDoiSiSo.Text = "Thay Đổi Sỉ Số"
+        '
+        'ThayToolStripMenuItem
+        '
+        Me.ThayToolStripMenuItem.Name = "ThayToolStripMenuItem"
+        Me.ThayToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.ThayToolStripMenuItem.Text = "Thay Đổi Tình Trạng"
         '
         'mainFrom
         '
@@ -155,4 +162,5 @@ Partial Class mainFrom
     Friend WithEvents TìnhTrạngTrẻToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuiDinh As ToolStripMenuItem
     Friend WithEvents thayDoiSiSo As ToolStripMenuItem
+    Friend WithEvents ThayToolStripMenuItem As ToolStripMenuItem
 End Class

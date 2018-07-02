@@ -8,7 +8,7 @@ Public Class thaydoiTinhTrang
         Dim tenTinhTrang As List(Of String) = New List(Of String)
 
         tinhtrang.getTinhTrang(tt)
-        tenTinhTrang = tt.Keys
+        tenTinhTrang = tt.Keys.ToList
         comboTinhTrang.Items.AddRange(tenTinhTrang.ToArray())
 
     End Sub
